@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-03T03:09:03.939Z",
+    "end": "2024-07-03T03:09:17.152Z",
+    "duration": 13213,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "07d7afe0-1f14-4468-987e-ff19cce0915a",
+      "title": "",
+      "fullFile": "cypress/integration/examples/1-FindSecColumn.js",
+      "file": "cypress/integration/examples/1-FindSecColumn.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f4afb0c1-a053-41d7-97f8-9ee8f7305deb",
+          "title": "My Very First Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test Case",
+              "fullTitle": "My Very First Test My First Test Case",
+              "timedOut": null,
+              "duration": 9023,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/integration/examples/1-FindSecColumn.js\"\n}",
+              "code": "cy.visit(Cypress.env('url_test') + \"/seleniumPractise/#/\");\n//fixture\ncy.get('.search-keyword').type('ca');\ncy.wait(2000);\n//selenium get hit url in browser, cypress acts like findElement of selenium\ncy.get('.product').should('have.length', 5);\ncy.get('.product:visible').should('have.length', 4);\n//parent child chaining\ncy.get('.products').as('productLocator');\ncy.get('@productLocator').find('.product').should('have.length', 4);\ncy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click();\n// // This way it shows in the console after other steps are executed.\n// cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click().then(function() {\n//     console.log('Moohoos')\n// })\nconsole.log('Mooshk');\ncy.get('@productLocator').find('.product').each(function ($el, index, $list) {\n  var textVeg = $el.find('.product-name').text();\n  if (textVeg.includes('Cashews')) {\n    cy.wrap($el).find('button').click();\n  }\n});\n// assert if logo text is  correctly displayed\ncy.get('.brand').should('have.text', 'GREENKART');\ncy.get('.brand').then(function (logoelement) {\n  cy.log(logoelement.text());\n});\n// cy.log(logo.text())",
+              "err": {},
+              "uuid": "4e459271-763d-4ebd-8162-7985569acbe4",
+              "parentUUID": "f4afb0c1-a053-41d7-97f8-9ee8f7305deb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4e459271-763d-4ebd-8162-7985569acbe4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9023,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

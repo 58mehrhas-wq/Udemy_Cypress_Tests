@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-24T05:58:46.732Z",
+    "end": "2024-07-24T05:58:47.722Z",
+    "duration": 990,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c8e30c0-582d-4903-aaa3-22f77e5e8293",
+      "title": "",
+      "fullFile": "cypress/e2e/examples/12-APITest.cy.js",
+      "file": "cypress/e2e/examples/12-APITest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3f10b5c8-c13c-42bb-bd49-666a91c716dd",
+          "title": "My First API Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First API Test",
+              "fullTitle": "My First API Suite My First API Test",
+              "timedOut": null,
+              "duration": 958,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/examples/12-APITest.cy.js\"\n}",
+              "code": "cy.request('POST', 'https://216.10.245.166/Library/Addbook.php', {\n  \"name\": \"Learn how to be a good person\",\n  \"isbn\": \"bctnnr\",\n  \"aisle\": \"98b2\",\n  \"author\": \"Ed Handsome\"\n}).then(function (response) {\n  expect(response.body).to.have.property(\"Msg\", \"successfully added\");\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "0e7bc46b-8e3f-4d85-94ef-800e2a1927ef",
+              "parentUUID": "3f10b5c8-c13c-42bb-bd49-666a91c716dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0e7bc46b-8e3f-4d85-94ef-800e2a1927ef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 958,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

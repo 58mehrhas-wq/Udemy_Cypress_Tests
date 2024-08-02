@@ -1,0 +1,37 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "firefoxTest": "npm run test -- --browser firefox",
+    "recordDashboardTest": "npm run test -- --record --key 7903afa3-03bf-4214-b5e0-8e202838cafa --spec cypress/integration/examples/*.js --headed --browser chrome",
+    "lastTest": "npx cypress run --spec cypress/e2e/examples/9-TestFrameWorks.cy.js --headed --browser chrome",
+    "api_fake_test": "npx cypress run --spec cypress/e2e/examples/10-FakeTest.cy.js --headed --browser electron",
+    "api_fake_test2": "npx cypress run --spec cypress/e2e/examples/11-FakeTest2.cy.js --headed --browser edge",
+    "api_test": "npx cypress run --spec cypress/e2e/examples/12-APITest.cy.js --headed --browser firefox",
+    "jwtSession": "npx cypress run --spec cypress/e2e/examples/13-JWTSession.cy.js --headed --browser edge"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "babel-loader": "^9.1.2",
+    "cypress": "^12.17.4",
+    "cypress-iframe": "^1.0.1",
+    "cypress-sql-server": "^1.0.0"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
+    "@cypress/browserify-preprocessor": "latest",
+    "babel-preset-es2015": "^6.24.1",
+    "cypress": "^13.13.1",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "neat-csv": "^5.1.0"
+  }
+}

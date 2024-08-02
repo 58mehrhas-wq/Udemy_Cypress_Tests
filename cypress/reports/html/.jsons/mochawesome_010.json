@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-17T01:08:54.632Z",
+    "end": "2024-07-17T01:09:08.626Z",
+    "duration": 13994,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "40271c9d-d9b8-49be-ad2b-9538af0337cd",
+      "title": "",
+      "fullFile": "cypress/e2e/examples/9-TestFrameWorks.cy.js",
+      "file": "cypress/e2e/examples/9-TestFrameWorks.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "787c9d3b-06ad-4c71-ba4e-fa9ef4d4eede",
+          "title": "My ninth Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My 9th TestCase",
+              "fullTitle": "My ninth Test Suite My 9th TestCase",
+              "timedOut": null,
+              "duration": 11102,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/examples/9-TestFrameWorks.cy.js\"\n}",
+              "code": "const homePage = new _HomePage.default();\nconst productPage = new _ProductPage.default();\nconst checkoutPage = new _CheckoutPage.default();\ncy.visit(Cypress.env('url_test') + \"/angularpractice/\");\nhomePage.getEditBox().type(this.data.name);\nhomePage.getGender().select(this.data.gender);\nhomePage.getTwoWayDataBinding().should('have.value', this.data.name);\nhomePage.getEditBox().should('have.attr', 'minlength', '2');\nhomePage.getEntrepreneaur().should('be.disabled');\nCypress.config('defaultCommandTimeout', 9000);\nhomePage.getShopTab().click();\nthis.data.productName.forEach(function (element) {\n  console.log(element);\n  cy.selectProduct(element);\n});\nproductPage.getCheckoutBtn().click();\nvar sum = 0;\nproductPage.getCheckoutItems().each(($el, index, $list) => {\n  const amount = $el.text();\n  var res = amount.split(' ');\n  res = res[1].trim();\n  sum = Number(sum) + Number(res);\n}).then(function () {\n  cy.log(sum);\n});\nproductPage.getTotal().then(function (element) {\n  const amount = element.text();\n  var res = amount.split(' ');\n  var total = res[1].trim();\n  expect(Number(total)).to.equal(sum);\n});\ncheckoutPage.getCheckoutBtn().click();\ncheckoutPage.getCountryEntry().type('Ind');\ncheckoutPage.getCountrySelect().click();\ncheckoutPage.getCheckbox().click({\n  force: true\n});\ncheckoutPage.getPurchaseBtn().click();\n// cy.get('.alert').should('have.text', 'Success! Thank you! Your order will be delivered in next few weeks :-).')\ncheckoutPage.getAlertMsg().then(function (element) {\n  const actualText = element.text();\n  expect(actualText.includes('Success')).to.be.true;\n});",
+              "err": {},
+              "uuid": "411ba0e2-1d2e-4382-81fc-06fcab900120",
+              "parentUUID": "787c9d3b-06ad-4c71-ba4e-fa9ef4d4eede",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "411ba0e2-1d2e-4382-81fc-06fcab900120"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11102,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
